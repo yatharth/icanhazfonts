@@ -3,11 +3,11 @@ import {useState} from 'react'
 import {CopyToClipboard} from 'react-copy-to-clipboard'
 import {toast} from 'bulma-toast'
 import TextareaAutosize from 'react-textarea-autosize'
-import Head from 'next/head';
+import Head from 'next/head'
 import Link from 'next/link'
 
 import MaxWidthLayout from '../components/MaxWidthLayout'
-import {fonts} from "../lib/fonts";
+import {fonts} from "../lib/fonts"
 
 
 // MAYBE IN FUTURE PROJECTS:
@@ -26,8 +26,8 @@ import {fonts} from "../lib/fonts";
 
 const Index: NextPage = () => {
 
-    const [inputText, setInputText] = useState("");
-    const isInputEmpty = !inputText;
+    const [inputText, setInputText] = useState("")
+    const isInputEmpty = !inputText
 
     const onCopy = (copiedText: string, wasSuccess: boolean) => {
         toast({
@@ -35,67 +35,86 @@ const Index: NextPage = () => {
             type: wasSuccess ? 'is-success' : 'is-danger',
             extraClasses: 'is-light px-4 py-3 mb-4',
         })
-    };
+    }
 
     return <>
 
         <Head>
             <title>icanhazfonts</title>
-            <meta name='description' content="Convert text into 𝘪𝘵𝘢𝘭𝘪𝘤𝘴, 𝗯𝗼𝗹𝗱, and other 𝕗𝕒𝕟𝕔𝕪 Unicode letters to use on
-                            Twitter, Instagram, and other places." />
+            <meta name="description" content="Convert text into 𝘪𝘵𝘢𝘭𝘪𝘤𝘴, 𝗯𝗼𝗹𝗱, and other 𝕗𝕒𝕟𝕔𝕪 Unicode letters to use on
+                            Twitter, Instagram, and other places."/>
         </Head>
 
-        <div className='py-6 px-5'>
-            <MaxWidthLayout maxWidth='30rem'>
+        <div className="py-6 px-5">
+            <MaxWidthLayout maxWidth="30rem">
 
 
-                <div className='mb-6'>
+                <div className="mb-6">
                     <TextareaAutosize autoFocus minRows={3} className={'textarea'} placeholder={"Add text here"}
                                       value={inputText} onChange={(event) => setInputText(event.target.value)}/>
                 </div>
 
-                <div className=''>
+                <div className="">
                     {fonts.map((font) =>
-                        <div key={font.name} className='field mb-5'>
-                            <div className='level is-mobile mb-3'>
-                                <div className='level-left'>
-                                    <div className='level-item'>
-                                        <label className='label'>
+                        <div key={font.name} className="field mb-5">
+                            <div className="level is-mobile mb-3">
+                                <div className="level-left">
+                                    <div className="level-item">
+                                        <label className="label">
                                             {font.name}
                                         </label>
                                     </div>
-                                    <div className='level-item'>
+                                    <div className="level-item">
                                         <CopyToClipboard text={font.converter(inputText)} onCopy={onCopy}>
-                                            <button className='button is-small' disabled={isInputEmpty}>
+                                            <button className="button is-small" disabled={isInputEmpty}>
                                                 Copy to Clipboard
                                             </button>
                                         </CopyToClipboard>
                                     </div>
                                 </div>
                             </div>
-                            <div className='control'>
-                                <TextareaAutosize minRows={1} className='textarea'
+                            <div className="control">
+                                <TextareaAutosize minRows={1} className="textarea"
                                                   readOnly={true}
                                                   placeholder={"Modified text will show up here"}
                                                   value={font.converter(inputText)}
                                     //  contentEditable={false} suppressContentEditableWarning={true}
                                 />
                             </div>
-                        </div>
+                        </div>,
                     )}
                 </div>
 
-                <div className='card mt-6'>
-                    <div className='card-content'>
-                        <div className="block title is-5 mb-3">
-                            <Link href='/'><a className='is-underlined'>
-                                <span className='has-text-weight-bold'>icanhazfonts</span>
-                                <span className='has-text-weight-normal'>.vercel.app</span>
+                <div className="card mt-6">
+                    <div className="card-content">
+                        <div className="title is-5 mb-3">
+                            <Link href="/"><a className="is-underlined">
+                                <span className="has-text-weight-bold">icanhazfonts</span>
+                                <span className="has-text-weight-normal">.vercel.app</span>
                             </a></Link>
                         </div>
-                        <div className='is-size-6'>
+                        <div className="content">
                             Quick way to get 𝘪𝘵𝘢𝘭𝘪𝘤𝘴, 𝗯𝗼𝗹𝗱, and other 𝕗𝕒𝕟𝕔𝕪 letters to paste into
                             Twitter, Instagram, and other places.
+                        </div>
+                    </div>
+                </div>
+
+                <div className="card mt-6">
+                    <div className=" card-content">
+                        <div className=" divider mt-0 mb-4">API</div>
+                        <div className=" content pb-1">
+                            (For the developers) There is an API. You can curl:
+                            <ul>
+                                <li>
+                                    <code>icanhazfonts.vercel.app/[fontName]/[text]</code><br/>
+                                    <span className=" pl-1">to convert text into a font</span>
+                                </li>
+                                <li>
+                                    <code>icanhazfonts.vercel.app/list</code><br/>
+                                    <span className=" pl-1">to get a list of font names</span>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -103,19 +122,20 @@ const Index: NextPage = () => {
             </MaxWidthLayout>
         </div>
 
-        <footer className='footer py-6 px-4 mt-6'>
-            <div className='content has-text-centered'>
+        <footer className=" footer py-6 px-4 mt-6">
+            <div className=" content has-text-centered">
                 <p>
-                    <strong>icanhazfonts</strong> by <a href='https://yatharth.io'>Yatharth Agarwal</a>.
+                    <strong>icanhazfonts</strong> by <a href=" https:
+            //yatharth.io">Yatharth Agarwal</a>.
                 </p>
                 <p>
-                    The source code is licensed <a href='http://opensource.org/licenses/mit-license.php'>MIT</a>.<br/>
+                    The source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.<br/>
                     The website content is licensed <a
-                    href='http://creativecommons.org/licenses/by-nc-sa/4.0/'>CC-BY-NC-SA-4.0</a>.
+                    href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-NC-SA-4.0</a>.
                 </p>
                 <p>
-                    Find the source on <a href='https://github.com/yatharth/icanhazfonts'>Github</a>.<br/>
-                    Built with <a href='https://bulma.io'>Bulma</a> and <a href='https://nextjs.org'>Next.js</a>.
+                    Find the source on <a href="https://github.com/yatharth/icanhazfonts">Github</a>.<br/>
+                    Built with <a href="https://bulma.io">Bulma</a> and <a href="https://nextjs.org">Next.js</a>.
                 </p>
             </div>
         </footer>
