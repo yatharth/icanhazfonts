@@ -43,6 +43,11 @@ const Index: NextPage = () => {
             <title>icanhazfonts</title>
             <meta name="description" content="Convert text into 𝘪𝘵𝘢𝘭𝘪𝘤𝘴, 𝗯𝗼𝗹𝗱, and other 𝕗𝕒𝕟𝕔𝕪 Unicode letters to use on
                             Twitter, Instagram, and other places."/>
+
+            {/* Without the initial-scale=1.0, it was doing weird things on Chrome on Android.  */}
+            {/* https://stackoverflow.com/a/49011516 */}
+            <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+
         </Head>
 
         <div className="py-6 px-5">
