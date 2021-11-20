@@ -15,10 +15,14 @@ import {fonts} from "../lib/fonts"
 // - TODO: Consider adding another page, just to see how prefetching and instant navigation works.
 // - TODO: Consider buying the cheapest domain possible? And fronting with Cloudflare, and configuring on Vercel.
 
+// MAYBE DO IN FUTURE
+// - TODO: Copy more styles from https://www.madeintext.com/bold-text-generator
+// - TODO: Decoding functionality? Should be simple. Reverse map. Could expose via API too.
+// - TODO: Then, could allow editing from within converted fields.
+
 // REJECTED FOR MINIMAL ROI
-// - TODO: Link to igfonts.io for more fonts.
+// - TODO: Link to https://www.madeintext.com/bold-text-generator for more fonts.
 // - TOOD: Link to icanhazcheezburger memes.
-// - TODO: Consider allowing editing from within converted fields? Meh, not much value add. And creating decoder function for two-way functionality would be too hard.
 // - TODO: Consider adding a tag under input text called "what’s this?” that jumps to the explanatory card.
 // - TODO: Consider adding quick jumps to all the font styles right below input field..
 // - TODO: Use ✍️ emoji as favicon instead of the wand.
