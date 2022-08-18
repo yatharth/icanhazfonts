@@ -12,7 +12,8 @@ import {
     BLACKBOARD_MAP,
     WIDE_MAP,
     FLIPPED_MAP,
-    CURSIVE_BOLD_MAP
+    CURSIVE_BOLD_MAP,
+    SMALL_CAPS_MAP
 } from "./maps"
 
 type Map = { [key: string]: string }
@@ -34,6 +35,7 @@ export const fonts: Font[] = [
     {key: 'monospace', name: '𝙼𝚘𝚗𝚘𝚜𝚙𝚊𝚌𝚎', converter: makeConverterFromMap(MONOSPACE_MAP)},
     {key: 'wide', name: 'Ｗｉｄｅ', converter: makeConverterFromMap(WIDE_MAP)},
     {key: 'blackboard', name: '𝔹𝕝𝕒𝕔𝕜𝕓𝕠𝕒𝕣𝕕', converter: makeConverterFromMap(BLACKBOARD_MAP)},
+    {key: 'smallcaps', name: 'Sᴍᴀʟʟ Cᴀᴘs', converter: makeConverterFromMap(SMALL_CAPS_MAP)},
     {key: 'squared', name: '🅂🅀🅄🄰🅁🄴🄳', converter: makeConverterFromMap(SQUARED_MAP)},
     {key: 'flipped', name: 'Ⅎlıppǝp', converter: makeConverterFromMap(FLIPPED_MAP)},
     {key: 'serif-italics', name: '𝑺𝒆𝒓𝒊𝒇 𝑰𝒕𝒂𝒍𝒊𝒄𝒔', converter: makeConverterFromMap(SERIF_ITALICS_MAP)},
